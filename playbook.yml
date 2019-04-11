@@ -1,0 +1,16 @@
+function orbitalPeriod(arr) {
+   var resultArr = [];
+   for (var teapot = 0; teapot < arguments[0].length; teapot++) {
+     var GM = 398600.4418;
+     var earthRadius = 6367.4447;
+     var avgAlt = arguments[0][teapot]['avgAlt'];
+     var name = arguments[0][teapot]['name'];
+     var orbitalPeriod = 2 * Math.PI * (Math.sqrt(Math.pow((earthRadius + avgAlt), 3) / GM));
+     var result = {
+       name: name,
+       orbitalPeriod: Math.round(orbitalPeriod)
+     }
+     resultArr.push(result);
+   }
+   return resultArr; 
+}
